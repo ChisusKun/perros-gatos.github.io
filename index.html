@@ -1,28 +1,57 @@
-<!doctype <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Perros y Gatos</title>
-    <style>
-      #resultado {
-        font-weight: bold;
-        font-size: 6rem;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <h1 class="display-5 fw-bold">Reconocimiento de perros y gatos</h1>
-        <div class="col-lg-6 mx-auto">
-            <video id="video" playsinline autoplay style="width: 1px"></video>
-            <button class="btn btn-primary mb-2" id="cambiar-camara" onclick="cambiarCamara();">Cambiar camara</button>
-            <canvas id="canvas" width="400" height="400" style="max-width: 100%;"></canvas>
-            <canvas id="otrocanvas" width="150" height="150" style="display: none"></canvas>
-            <div id="resultado"></div>            
-    
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="model.json"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Perros y Gatos</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #resultado {
+      font-weight: bold;
+      font-size: 6rem;
+      text-align: center;
+      margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    }
+
+    .video-container {
+      position: relative;
+    }
+
+    #video {
+      width: 100%;
+      max-width: 400px; /* Ajusta el ancho máximo según sea necesario */
+    }
+
+    #cambiar-camara {
+      margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="display-5 fw-bold">Reconocimiento de perros y gatos</h1>
+  <div class="video-container">
+    <video id="video" playsinline autoplay></video>
+    <button class="btn btn-primary mb-2" id="cambiar-camara" onclick="cambiarCamara();">Cambiar cámara</button>
+  </div>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <canvas id="otrocanvas" width="150" height="150" style="display: none"></canvas>
+  <div id="resultado"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="model.json"></script>
   <script type="text/javascript">
+    // Tu código JavaScript aquí
+  </script>
+</body>
+</html>
+
 
     var tamano = 400;
     var video = document.getElementById("video");
